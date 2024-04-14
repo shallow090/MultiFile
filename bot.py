@@ -37,6 +37,14 @@ class Bot2(Client):
         )
         self.LOGGER = LOGGER
 
+    # Create instances for both bots
+bot1 = Bot1()
+bot2 = Bot2()
+
+# Start the bots
+bot1.run()
+bot2.run()
+
 
     async def start(self):
         await super().start()
