@@ -19,8 +19,7 @@ class Bot(Client):
                 "root": "plugins"
             },
             workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN1,
-            bot_token=TG_BOT_TOKEN2
+            bot_token=[TG_BOT_TOKEN1,TG_BOT_TOKEN2]
         )
         self.LOGGER = LOGGER
 
