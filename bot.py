@@ -9,19 +9,41 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN1,TG_BOT_TOKEN2, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
-class Bot(Client):
+class Bot1(Client):
     def __init__(self):
         super().__init__(
-            name="Bot",
+            name="Bot1",
             api_hash=API_HASH,
             api_id=APP_ID,
             plugins={
                 "root": "plugins"
             },
             workers=TG_BOT_WORKERS,
-            bot_token=[TG_BOT_TOKEN1,TG_BOT_TOKEN2]
+            bot_token=TG_BOT_TOKEN1
         )
         self.LOGGER = LOGGER
+
+class Bot2(Client):
+    def __init__(self):
+        super().__init__(
+            name="Bot2",
+            api_hash=API_HASH,
+            api_id=APP_ID,
+            plugins={
+                "root": "plugins"
+            },
+            workers=TG_BOT_WORKERS,
+            bot_token=TG_BOT_TOKEN2
+        )
+        self.LOGGER = LOGGER
+
+# Create instances for both bots
+bot1 = Bot1()
+bot2 = Bot2()
+
+# Start the bots
+bot1.run()
+bot2.run()
 
     async def start(self):
         await super().start()
