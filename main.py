@@ -1,4 +1,4 @@
-from bot import bot1,bot2
+from bot import Bot1,Bot2
 
-bot1().run()
-bot2().run()
+Bot1().run()
+Bot2().run()
