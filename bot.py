@@ -41,10 +41,6 @@ class Bot2(Client):
 bot1 = Bot1()
 bot2 = Bot2()
 
-# Start the bots
-bot1.run()
-bot2.run()
-
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
