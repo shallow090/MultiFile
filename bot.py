@@ -87,10 +87,4 @@ class Bot2(Client):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
 
-   # Create instances for both bots
-bot1 = Bot1()
-bot2 = Bot2()
 
-# Start the bots
-bot1.run()
-bot2.run()
