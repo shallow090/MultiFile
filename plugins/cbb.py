@@ -3,7 +3,7 @@ from bot import Bot1,Bot2
 from config import OWNER_ID
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-@Bot.on_callback_query()
+@Bot1.on_callback_query()
 async def cb_handler(client: Bot1, query: CallbackQuery):
     data = query.data
     if data == "about":
@@ -25,7 +25,7 @@ async def cb_handler(client: Bot1, query: CallbackQuery):
         except:
             pass
 
-@Bot.on_callback_query()
+@Bot2.on_callback_query()
 async def cb_handler(client: Bot2, query: CallbackQuery):
     data = query.data
     if data == "about":
