@@ -40,12 +40,12 @@ async def new_post(client: Client, message: Message, db_channel: int):
 
 @Bot1.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
 @Bot2.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
-async def new_post(client: Client, message: Message):
+async def new_post(client: Client, message: Message, db_channel: int):
 
     if DISABLE_CHANNEL_BUTTON:
         return
 
-    converted_id = message.id * abs(client.db_channel.id)
+    converted_id = message.id * abs(db_channel)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
