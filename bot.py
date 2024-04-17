@@ -9,8 +9,8 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN1,TG_BOT_TOKEN2, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
-Bot1 = Client("Bot1", bot_token=config.TG_BOT_TOKEN1)
-Bot2 = Client("Bot2", bot_token=config.TG_BOT_TOKEN2)
+Bot1 = Client("Bot1", TG_BOT_TOKEN1=config.TG_BOT_TOKEN1)
+Bot2 = Client("Bot2", TG_BOT_TOKEN2=config.TG_BOT_TOKEN2)
 
 # Run both bots
 Bot1.run()
