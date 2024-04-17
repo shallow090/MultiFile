@@ -9,6 +9,13 @@ from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN1,TG_BOT_TOKEN2, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
+bot1 = Client("bot1", bot_token=config.BOT_TOKEN1)
+bot2 = Client("bot2", bot_token=config.BOT_TOKEN2)
+
+# Run both bots
+bot1.run()
+bot2.run()
+
 class Bot1(Client):
     def __init__(self):
         super().__init__(
